@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Willing</div>
+            <ul class="nav-links">
+                <li><a href="#">기업 소개</a></li>
+                <li><a href="#">우리의 가치</a></li>
+                <li><a href="#">멤버십 구독</a></li>
+                <li><a href="#">혜택</a></li>
+                <li><a href="#">고객 지원</a></li>
+                <li><a href="#">스토리</a></li>
+            </ul>
+            <div class="nav-menu">
+                <button>메뉴</button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <video autoplay muted loop id="hero-video">
+            <source src="185023-874465595.mp4" type="video/mp4">
+            브라우저가 동영상을 지원하지 않습니다.
+        </video>
+        <div class="hero-content">
+            <h1>비로소, 교실이 안전해집니다</h1>
+            <p>하루 600원으로 완벽하게 보호받으세요</p>
+            <button class="cta-button">멤버십 가입하기</button>
+        </div>
+    </section>
+    
+    <section class="video-section">
+        <video autoplay muted loop>
+            <source src="215470_small.mp4" type="video/mp4">
+            브라우저가 동영상을 지원하지 않습니다.
+        </video>
+        <div class="hero-content">
+            <h1>법률 지원</h1>
+            <p>강력한 법률 지원 체계</p>
+            <button class="cta-button">더 알아보기</button>
+        </div>
+    </section>
+
+    <!-- 세 번째 비디오 섹션 -->
+    <section class="video-section">
+        <video autoplay muted loop>
+            <source src="215475_small.mp4" type="video/mp4">
+            브라우저가 동영상을 지원하지 않습니다.
+        </video>
+        <div class="hero-content">
+            <h1>심리 상담</h1>
+            <p>전문 상담가와의 1:1 상담</p>
+            <button class="cta-button">더 알아보기</button>
+        </div>
+    </section>
+
+    
+    <section id="features">
+        <h2>주요 서비스</h2>
+        <div class="feature-item-container">
+            <div class="feature-item">
+                <img src="feature1.jpg" alt="Feature 1">
+                <h3>강력한 법률 지원 체계</h3>
+                <p>법무법인 김앤장</p>
+            </div>
+            <div class="feature-item">
+                <img src="feature2.jpg" alt="Feature 2">
+                <h3>무수히 많은 혜택</h3>
+                <p>100여 개의 제휴 서비스</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Willing. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+<script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('header');
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // 스크롤을 내릴 때
+            navbar.style.top = '-100px'; // 네비게이션 바 숨기기
+        } else {
+            // 스크롤을 올릴 때
+            navbar.style.top = '0'; // 네비게이션 바 보이기
+        }
+        lastScrollTop = scrollTop;
+    });
+</script>
+
+<script>
+    const menuButton = document.querySelector('.nav-menu button');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+        navLinks.classList.toggle('active'); /* 메뉴 항목 표시/숨기기 */
+    });
+</script>
+
+<!-- 전체 화면 메뉴 추가 -->
+<div id="fullScreenMenu" class="fullscreen-menu">
+    <div class="menu-content">
+        <a href="#" class="close-btn">&times;</a>
+        <a href="#">기업 소개</a>
+        <a href="#">우리의 가치</a>
+        <a href="#">멤버십 구독</a>
+        <a href="#">혜택</a>
+        <a href="#">고객 지원</a>
+        <a href="#">스토리</a>
+    </div>
+</div>
+
+
+
+</html>

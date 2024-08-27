@@ -1,0 +1,494 @@
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+    background-color: #FFF1E0; /* Peach Fuzz보다 연한 색상으로 배경 변경 */
+}
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent; /* 배경을 투명하게 설정 */
+    transition: background-color 0.3s ease, padding 0.3s ease, top 0.3s ease; /* top의 변화도 부드럽게 전환 */
+    padding: 2px 0; /* 상단바의 초기 패딩을 매우 작게 설정 */
+    box-shadow: none; /* 초기 상태에서 그림자를 제거 */
+    z-index: 1000; /* 네비게이션 바를 맨 위에 표시 */
+}
+
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; /* 크기를 더 크게 설정 */
+    color: #FFDAB9; /* Peach Fuzz 색상 */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* 강한 그림자 효과 */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    margin-left: 30px; /* 왼쪽에서 약간 떨어지도록 설정 */
+
+}
+
+.logo:hover {
+    color: #FFB07C;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7); /* 호버 시 그림자 강화 */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: nowrap; /* 항목들이 줄바꿈되지 않도록 설정 */
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* 메뉴 간격을 조정 */
+    flex-wrap: nowrap; /* 메뉴 항목들이 줄바꿈되지 않도록 설정 */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #FFDAB9; /* Peach Fuzz 색상 */
+    font-family: 'Noto Sans KR', sans-serif; /* 우아한 한글 폰트 */
+    font-weight: bold;
+    font-size: 18px; /* 텍스트 크기를 18px로 설정 */
+    padding: 10px 15px; /* 메뉴 항목에 여유 공간 추가 */
+    transition: color 0.3s;
+    white-space: nowrap; /* 텍스트 줄바꿈을 방지 */
+
+}
+
+.nav-links a:hover {
+    color: #FFB07C; /* Peach Fuzz의 밝은 톤으로 변경 */
+}
+
+.nav-menu button {
+    background-color: transparent;
+    color: #FFDAB9; /* Peach Fuzz 색상 */
+    border: 2px solid #FFDAB9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu button:hover {
+    background-color: #FFDAB9; /* 버튼 배경색을 Peach Fuzz로 변경 */
+    color: #2B2D42; /* 텍스트를 어두운 색으로 변경 */
+}
+
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* 동영상이 화면 밖으로 나가지 않도록 설정 */
+}
+
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* 컨텐츠가 동영상 위에 위치하도록 설정 */
+}
+
+.hero-content {
+    color: #fff;
+    z-index: 1; /* 컨텐츠가 동영상 위에 표시되도록 설정 */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #333;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#features, #products {
+    background-color: #FFF1E0; /* Peach Fuzz보다 연한 색상으로 배경 변경 */
+    margin-bottom: 20px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+#features {
+    text-align: center; /* 제목을 가운데 정렬 */
+    padding: 60px 10px;
+}
+
+#features h2 {
+    margin-bottom: 70px; /* 제목 아래에 여백 추가 */
+    margin-top: 40px; /* 제목 아래에 여백 추가 */
+}
+
+.feature-item-container {
+    display: flex;
+    justify-content: space-around; /* 특징들을 수평으로 배치 */
+    flex-wrap: wrap; /* 화면 크기에 따라 줄바꿈 허용 */
+    gap: 0px; /* 특징들 사이에 간격 추가 */
+}
+
+.feature-item {
+    position: relative;
+    width: 48%; /* 특징 항목의 너비를 설정 */
+    text-align: center;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.feature-item img {
+    width: 100%;
+    height: 300px; /* 원하는 높이로 설정 */
+    object-fit: cover; /* 비율을 유지하면서 크기에 맞게 자르기 */
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+}
+
+.feature-item h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    background-color: rgba(43, 45, 66, 0.7); /* 반투명 #2B2D42 색상 */
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+    opacity: 0; /* 처음에는 숨겨진 상태 */
+}
+
+.feature-item:hover img {
+    transform: scale(1.15); /* 이미지를 확대 */
+}
+
+.feature-item:hover h3 {
+    opacity: 1; /* 텍스트를 보이게 */
+    background-color: rgba(43, 45, 66, 0.9); /* 호버 시 반투명 #2B2D42로 변경 */
+    transform: translate(-50%, -50%) scale(1.1); /* 텍스트도 확대 */
+}
+
+.feature-item p {
+    margin-top: 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+/* 기본 스타일 유지 */
+
+.video-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.video-section video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+
+.hero-content {
+    color: #fff;
+    z-index: 1; /* 컨텐츠가 동영상 위에 표시되도록 설정 */
+    position: absolute;
+    top: 30%; /* 텍스트를 위쪽에 배치 */
+    left: 50%;
+    transform: translate(-50%, -20%); /* 가로 중앙 정렬 및 세로 위치 조정 */
+    text-align: center;
+}
+.hero-content h1 {
+    font-size: 32px;
+    margin-bottom: -10px;
+    transform: translateY(-20%); /* 위쪽에 배치되도록 조정 */
+}
+
+.hero-content p {
+    font-size: 14px;
+    margin-bottom: 500px; /* p 아래에 여백을 추가하여 버튼과의 간격 조정 */
+}
+
+.cta-button {
+    padding: 10px 100px;
+    background-color:transparent;
+    color: #fff;
+    border: 3px solid #fff; /* 테두리를 흰색으로 설정 */
+    border-radius: 5px; /* 테두리를 둥글게 설정, 값이 클수록 더 둥글게 */
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* 호버 시 약간의 흰색 배경 추가 */
+    color: #fff; /* 글씨 색상 유지 */
+    border-color: #fff; /* 테두리 색상 유지 */
+}
+
+/* 초기 상태: 투명한 배경과 작은 글씨 */
+header {
+    background-color: transparent; /* 배경을 투명하게 설정 */
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    padding: 1px 0; /* 상단바의 패딩을 줄여서 초기 상태에서는 더 얇게 */
+    box-shadow: none; /* 초기 상태에서 그림자를 제거 */
+
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.7); /* 초기 상태의 텍스트 색상과 불투명도를 조정 */
+    font-size: 14px; /* 글씨 크기를 작게 설정 */
+    transition: color 0.3s ease, font-size 0.3s ease, padding 0.3s ease;
+    padding: 5px 10px; /* 초기 상태에서의 패딩 */
+}
+
+/* 마우스를 올렸을 때 상태 */
+header:hover {
+    background-color: #2B2D42; /* Peach Fuzz를 돋보이게 할 어두운 색상 */
+    padding: 3px 0; /* 패딩을 늘려서 상단바를 확대 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links a:hover {
+    color: #FFDAB9; /* Peach Fuzz 색상으로 변경 */
+    font-size: 18px; /* 글씨 크기를 키움 */
+    padding: 10px 15px; /* 패딩을 늘려 더 큰 클릭 영역 제공 */
+}
+
+
+/* 기본 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    /* 네비게이션 바 조정 */
+    .nav-links {
+        display: none; /* 기본적으로 메뉴 항목들을 숨김 */
+        flex-direction: column; /* 수직 배열로 변경 */
+        position: absolute;
+        top: 60px; /* 네비게이션 바 아래에 메뉴 표시 */
+        left: 0;
+        width: 100%;
+        background-color: rgba(43, 45, 66, 0.9); /* 어두운 배경색 */
+        z-index: 1001;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 15px 0; /* 메뉴 항목의 패딩 조정 */
+        font-size: 16px; /* 글씨 크기를 조금 더 키움 */
+        border-bottom: 1px solid #FFDAB9; /* 항목 사이에 구분선 추가 */
+    }
+
+    .nav-menu {
+        display: block; /* 메뉴 버튼을 보이게 설정 */
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    .nav-menu button {
+        padding: 10px;
+        background-color: transparent;
+        color: #FFDAB9;
+        border: 2px solid #FFDAB9;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-menu button:hover {
+        background-color: #FFDAB9; /* 버튼 배경색을 Peach Fuzz로 변경 */
+        color: #2B2D42; /* 텍스트를 어두운 색으로 변경 */
+    }
+
+    /* 메뉴를 클릭할 때 표시/숨기기 */
+    .nav-links.active {
+        display: flex; /* 메뉴 항목들이 나타남 */
+    }
+
+    /* 로고 가운데 정렬 */
+    .logo {
+        margin-left: 10px auto; /* 자동으로 양쪽 여백 설정 */
+        text-align: center;
+    }
+}
+
+/* 더 작은 화면 (예: 모바일) */
+@media (max-width: 480px) {
+    .nav-links a {
+        font-size: 14px; /* 더 작은 화면에서는 글씨 크기 축소 */
+        padding: 10px 0; /* 패딩도 줄여서 공간 절약 */
+    }
+
+    .hero-content h1 {
+        font-size: 28px; /* 제목 크기 축소 */
+    }
+
+    .hero-content p {
+        font-size: 16px; /* 설명 텍스트 크기 조정 */
+    }
+
+    .cta-button {
+        font-size: 14px; /* 버튼 텍스트 크기 축소 */
+        padding: 10px 20px; /* 버튼 패딩 조정 */
+    }
+
+    .logo {
+        font-size: 28px; /* 로고 크기 축소 */
+    }
+}
+
+/* 기본 텍스트 크기 설정 */
+body {
+    font-size: 1vw; /* 화면 너비에 따라 텍스트 크기 조정 */
+}
+
+/* h1 태그에 대한 반응형 크기 설정 */
+.hero-content h1 {
+    font-size: clamp(24px, 8vw, 48px); /* 최소 24px, 최대 48px로 설정, 화면 너비에 비례 */
+    margin-bottom: 20px;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+
+}
+
+/* 일반 텍스트에 대한 반응형 크기 설정 */
+.hero-content p, 
+.nav-links a {
+    font-size: clamp(12px, 4vw, 18px); /* 최소 12px, 최대 18px로 설정 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+/* 버튼 텍스트 크기 조정 */
+.cta-button {
+    font-size: clamp(10px, 3vw, 16px); /* 버튼 텍스트 크기를 화면에 따라 조정 */
+}
+
+/* 추가적인 미디어 쿼리로 세밀하게 조정 */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: clamp(20px, 6vw, 32px); /* 작은 화면에서는 더 작은 크기 설정 */
+    }
+
+    .nav-links a {
+        font-size: clamp(10px, 3.5vw, 16px); /* 메뉴 항목 크기 조정 */
+    }
+
+    .cta-button {
+        font-size: clamp(8px, 2.5vw, 14px); /* 버튼 텍스트 크기 더 작게 조정 */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: clamp(18px, 5vw, 28px); /* 더 작은 화면에서는 크기를 더욱 줄임 */
+    }
+
+    .nav-links a {
+        font-size: clamp(8px, 3vw, 14px); /* 메뉴 항목 크기 더 작게 설정 */
+    }
+
+    .cta-button {
+        font-size: clamp(6px, 2vw, 12px); /* 버튼 텍스트 크기를 더욱 작게 */
+    }
+}
+/* /features/ 섹션의 제목 크기 조정 */
+#features h2 {
+    font-size: clamp(20px, 5vw, 40px); /* 화면 크기에 따라 제목 크기 조절 */
+    margin-bottom: 50px; /* 여백을 적절히 조정 */
+}
+
+/* feature-item의 텍스트 크기 및 상자 크기 조정 */
+.feature-item h3 {
+    font-size: clamp(16px, 4vw, 24px); /* 화면 크기에 따라 텍스트 크기 조절 */
+    padding: 10px; /* 상자 안의 텍스트 여백 설정 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.feature-item p {
+    font-size: clamp(12px, 3vw, 18px); /* 설명 텍스트 크기 조정 */
+    margin-top: 10px;
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+/* feature-item의 크기 조정 */
+.feature-item {
+    width: auto; /* 너비를 자동으로 조정 */
+    padding: 20px; /* 상자의 패딩을 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함하여 크기 조절 */
+    max-width: 100%; /* 최대 너비를 화면 크기에 맞추어 설정 */
+}
+
+.feature-item img {
+    height: auto; /* 이미지 높이를 자동으로 조정 */
+    width: 100%; /* 이미지가 상자의 너비를 채우도록 설정 */
+    object-fit: cover; /* 이미지를 상자 크기에 맞게 조정 */
+}
+
+@media (max-width: 768px) {
+    .feature-item-container {
+        flex-direction: column; /* 작은 화면에서는 세로로 나열 */
+        gap: 20px; /* 항목들 사이의 간격 조정 */
+    }
+
+    .feature-item {
+        width: 100%; /* 작은 화면에서 상자 크기 조정 */
+    }
+}
+
+@media (max-width: 480px) {
+    #features h2 {
+        font-size: clamp(18px, 5vw, 32px); /* 작은 화면에서는 제목 크기 더 작게 */
+    }
+
+    .feature-item h3 {
+        font-size: clamp(14px, 4vw, 20px); /* 작은 화면에서는 텍스트 크기 더 작게 */
+    }
+
+    .feature-item p {
+        font-size: clamp(10px, 3vw, 16px); /* 작은 화면에서는 설명 텍스트 크기 더 작게 */
+    }
+
+    .feature-item {
+        padding: 15px; /* 작은 화면에서는 패딩을 줄임 */
+    }
+}
+
